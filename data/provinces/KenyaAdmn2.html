@@ -1,0 +1,1730 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JScript"><!--
+
+function test() {
+  var ua = window.navigator.userAgent
+  var msie = ua.indexOf ( "MSIE " )
+  if ( msie == -1 ) 
+    document.write("<P>" + "Netscape")
+}
+
+      function fix(e) {
+        var par = e.parentNode;
+        e.id = "";
+        e.style.marginLeft = "0.42in";
+        var pos = e.innerText.indexOf("\n");
+        if (pos > 0) {
+          while (pos > 0) {
+            var t = e.childNodes(0);
+            var n = document.createElement("PRE");
+            var s = t.splitText(pos);
+            e.insertAdjacentElement("afterEnd", n);
+            n.appendChild(s);
+            n.style.marginLeft = "0.42in";
+            e = n;
+            pos = e.innerText.indexOf("\n");
+          }
+          var count = (par.children.length);
+          for (var i = 0; i < count; i++) {
+            e = par.children(i);
+            if (e.tagName == "PRE") {
+              pos = e.innerText.indexOf(">");
+              if (pos != 0) {
+                n = document.createElement("DD");
+                e.insertAdjacentElement("afterEnd", n);
+                n.innerText = e.innerText;
+                e.removeNode(true);
+              }
+            }
+          }
+          if (par.children.tags("PRE").length > 0) {
+            count = (par.children.length);
+            for (i = 0; i < count; i++) {
+              e = par.children(i);
+              if (e.tagName == "PRE") {
+                e.id = "";
+                if (i < (count-1)) {
+                  var e2 = par.children(i + 1);
+                  if (e2.tagName == "PRE") {
+                    e.insertAdjacentText("beforeEnd", e2.innerText+"\n");
+                    e2.removeNode(true);
+                    count = count-1;
+                    i = i-1;
+                  }
+                }
+              }
+            }
+          }
+        }
+        else {
+          n = document.createElement("DD");
+          par.appendChild(n);
+          n.innerText = e.innerText;
+          e.removeNode(true);
+        }
+      }
+
+    --></SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" ONCONTEXTMENU="return true">
+<FONT COLOR="00008B" SIZE="2" FACE="Verdana">
+<A name="Top" />
+<TABLE COLS="2" WIDTH="100%" BGCOLOR="#CCFFCC" CELLPADDING="11" BORDER="0" CELLSPACING="0">
+<TR ALIGN="center" VALIGN="center">
+<TD COLSPAN="2">
+<FONT COLOR="#006400" FACE="Verdana" SIZE="4">
+<B>Kenya Administrative Boundaries Level 2</B>
+</FONT>
+</TD>
+</TR>
+<TR ALIGN="left" VALIGN="top">
+<TD>
+<FONT COLOR="#006400" FACE="Verdana" SIZE="2">
+<P><B>Coordinate system:</B>
+Geographic 
+
+</P>
+<P><B>Theme keywords:</B>
+boundaries, Secondary administrative boundaries, Borders</P>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD COLSPAN="2">
+<FONT COLOR="#006400" FACE="Verdana" SIZE="2">
+<B>Abstract:</B>
+This ARC/INFO polygon coverage contains the second level administrative boundaries at a 1:1000000 scale.
+
+The coverage is part of the Famine Early Warning System (FEWS) / Associates in Rural Development (ARD) African series.
+
+Kenya is associated with the Horn region of Africa.<BR /><BR />
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<H3>FGDC and ESRI Metadata:</H3>
+<UL>
+<LI><A HREF="#Identification_Information">Identification Information</A></LI>
+<LI><A HREF="#Data_Quality_Information">Data Quality Information</A></LI>
+<LI><A HREF="#Spatial_Data_Organization_Information">Spatial Data Organization Information</A></LI>
+<LI><A HREF="#Spatial_Reference_Information">Spatial Reference Information</A></LI>
+<LI><A HREF="#Entity_and_Attribute_Information">Entity and Attribute Information</A></LI>
+<LI><A HREF="#217655200">
+
+            Distribution Information
+          </A></LI>
+<LI><A HREF="#Metadata_Reference_Information">Metadata Reference Information</A></LI>
+</UL>
+<BLOCKQUOTE><FONT SIZE="1">
+      Metadata elements shown with blue text are defined in the
+      Federal Geographic Data Committee's (FGDC) <A TARGET="viewer" HREF="http://www.fgdc.gov/metadata/contstan.html">
+<I>Content Standard for Digital Geospatial Metadata (CSDGM)</I></A>.
+      Elements shown with <FONT color="#006400">green</FONT>
+      text are defined in the <A TARGET="viewer" HREF="http://www.esri.com/metadata/esriprof80.html">
+<I>ESRI Profile of the CSDGM</I>.</A>
+      Elements shown with a green asterisk (<FONT color="#006400">*</FONT>)
+      will be automatically updated by ArcCatalog.
+      ArcCatalog adds hints indicating which FGDC elements are mandatory; 
+      these are shown with <FONT color="#999999">gray</FONT> text.
+    </FONT></BLOCKQUOTE>
+<A name="Identification_Information"><HR /></A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Identification Information:</B></FONT></DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation information:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Originators:</B></FONT>
+USAID / FEWS</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Title:</B></FONT></DT>
+<DD>Kenya Administrative Boundaries Level 2</DD>
+<BR /><BR /><DT>
+<FONT color="#0000AA"><B>Publication date:</B></FONT>
+1996</DT>
+<DT><FONT color="#0000AA"><B>Edition:</B></FONT>
+1</DT>
+<DT><FONT color="#0000AA"><B>Geospatial data presentation form:</B></FONT>
+vector digital data</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Series information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Series name:</B></FONT>
+FEWS 3</DT>
+<DT><FONT color="#0000AA"><B>Issue identification:</B></FONT>
+1</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Publication information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Publication place:</B></FONT>
+Sioux Falls, SD, USA</DT>
+<DT><FONT color="#0000AA"><B>Publisher:</B></FONT>
+EDC/International Program</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Other citation details:</B></FONT></DT>
+<DD>FEWS/EROS Data Center (EDC)</DD>
+<BR /><BR />
+<DT><FONT color="#0000AA"><B>Online linkage:</B></FONT>
+<A TARGET="viewer" HREF="https://www1.columbia.edu/sec/acis/eds/dgate/studies/C1301/data/KenyaAdmn2.zip">
+https://www1.columbia.edu/sec/acis/eds/dgate/studies/C1301/data/KenyaAdmn2.zip</A>
+</DT>
+<BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Description:</B></FONT></DT>
+<DD>
+<DL>
+<DIV>
+<DT><FONT color="#0000AA"><B>Abstract:</B></FONT></DT>
+<PRE ID="original">This ARC/INFO polygon coverage contains the second level administrative boundaries at a 1:1000000 scale.
+
+The coverage is part of the Famine Early Warning System (FEWS) / Associates in Rural Development (ARD) African series.
+
+Kenya is associated with the Horn region of Africa.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV><BR />
+<DIV>
+<DT><FONT color="#0000AA"><B>Purpose:</B></FONT></DT>
+<PRE ID="original">This data set is to be used in conjunction with other layers of Kenya data. The data are intended to show the spatial distribution of the second level administrative boundaries for Kenya.
+
+The data are to be used in modeling, targeting and demonstration projects. The data are also used in natural resource management, inventory, change analysis, policy making, environmental awareness and land use planning.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV><BR />
+<DIV>
+<DT><FONT color="#0000AA"><B>Supplemental information:</B></FONT></DT>
+<PRE ID="original">Procedures_Used: The 1979 Census Enumeration Area maps, with sub-location boundaries and the Survey of Kenya Topo. Map Series (1:50000), were used as the base maps for creating new 1989 Census Enumeration Maps with sub-location boundaries. A large field mapping effort, headed by the Kenya Bureau of Statistics (Cartographic Section), began in 1987 in preparation for the 1989 Census. Census enumeration agents visited all 3667 sub-locations and met with the village Assistant Chiefs for the purpose of updating/ correcting the 1979 sub-location boundaries.
+
+The corrected sub-location boundaries were then plotted (hand-drawn) onto the 1:50000 Survey of Kenya, Topo. Map Series. Direct tracing and photographic procedures were later used to transfer the sub-location line work to a series of district maps of varying scales. District map scales were as follows:
+
+Urban Areas 1:50000 (i.e. Mombassa &amp; Nairobi) High Population Density Rural Areas 1:100000 Medium Population Density Areas and Arid and Semi-Arid Areas 1:250000
+
+The sub-location boundaries on each district map were then digitized. In general, registration errors during digitizing (RMS) did not exceed .003 inches. Each sub-location polygon was given a code reflecting its Admin. context (i.e., Province, District, Division, Location, sub-location). This coding allowed for the subsequent creation of higher order admin. maps; i.e., linework was "dissolved" to create the Province borders.
+
+These country specific sub-national boundaries were then integrated into the DCW master country database using the ARC/INFO command UPDATE.
+
+The country specific data set, containing all of the sub-national hierarchy, was extracted from the DCW master data set using the ARC/INFO command RESELECT and the second level administrative units were extracted from the country specific data set using the ARC/INFO command DISSOLVE.
+
+A master data set, based on the Digital Chart of the World (DCW) PONET layer, was created. Burkina Faso, Mali, Ethiopia, and Eritrea are included in the master data set, however, these countries have international boundaries that have been revised.
+
+The changes to Burkina Faso are: The Digital Chart of the World (DCW) International boundary was used for the International boundary for Burkina Faso with the only revisions being those listed below.
+
+From : -2 degrees; 55 minutes; 8 seconds Longitude and : 13 degrees;37 minutes; 37 seconds Latitude
+
+To : -0 degrees; 57 minutes; 41 seconds Longitude and : 14 degrees; 52 minutes; 14 seconds Latitude
+
+AND...
+
+From : 0 degrees; 3 minutes; 33 seconds Longitude and : 14 degrees; 58 minutes; 15 seconds Latitude
+
+To : 0 degrees; 13 minutes; 55 seconds Longitude and : 14 degrees; 58 minutes; 15 seconds Latitude
+
+These changes are defined by FEWS/ARD Washington, DC, USA.
+
+The changes to Mali are: The Digital Chart of the World (DCW) International boundary was used for the International boundary for Mali with the only revisions being those listed below.
+
+From : -2 degrees; 55 minutes; 8 seconds Longitude and : 13 degrees;37 minutes; 37 seconds Latitude
+
+To : -0 degrees; 57 minutes; 41 seconds Longitude and : 14 degrees; 52 minutes; 14 seconds Latitude
+
+AND...
+
+From : 0 degrees; 3 minutes; 33 seconds Longitude and : 14 degrees; 58 minutes; 15 seconds Latitude
+
+To : 0 degrees; 13 minutes; 55 seconds Longitude and : 14 degrees; 58 minutes; 15 seconds Latitude
+
+These changes are defined by FEWS/ARD Washington, DC, USA.
+
+The changes to Ethiopia are: The Digital Chart of the World (DCW) International boundary was used for the International boundary for Ethiopia with the only revisions being those listed below.
+
+From : 36 degrees; 34 minutes; 5 seconds Longitude and : 14 degrees; 14 minutes; 25 seconds Latitude
+
+To : 42 degrees; 25 minutes; 22 seconds Longitude and : 12 degrees; 26 minutes; 53 seconds Latitude
+
+These changes are defined by FEWS/ARD Washington, DC, USA.
+
+The changes to Eritrea are: The Digital Chart of the World (DCW) International boundary was used for the International boundary of Eritrea with the only revisions being those listed below:
+
+From : 36 degrees; 34 minutes; 5 seconds Longitude and : 14 degrees; 14 minutes; 25 seconds Latitude
+
+To : 42 degrees; 25 minutes; 22 seconds Longitude and : 12 degrees; 26 minutes; 53 seconds Latitude
+
+These changes are defined by FEWS/ARD Washington, DC, USA.
+
+The international boundary for Kenya was extracted from an ARC/INFO LIBRARY created from the ARC/INFO version of the Digital Chart of the World (DCW) using the ARC/INFO tool LIBRARIAN.
+
+Revisions: During ARC/INFO coverage development modifications were made to the digital files to generate a database with a common scale, uniform level of resolution, consistent coding scheme and comparable (standardized) measurement data.
+
+Reviews_Applied_to_Data: Peer review, 03/96, FEWS/ARD Washington, D.C.
+
+Digital line work and attribute data checked for discrepancies and approved for release to FEWS in-country and regional field representatives.
+
+Related_Spatial_and_Tabular_Data_Sets: None
+
+Other_References_Cited: Environmental Systems Research Institute (ESRI), Inc., 1993, "Digital Chart of the World (DCW)," PONET Layer. ESRI. Redlands, CA, USA. Scale - 1:1000000.
+
+Kenya Bureau of Statistics/Cartographic Section, 1989, "Kenya Population Census District Maps," Kenya Bureau of Statistics/Cartographic Section. Scale - 1:50000.
+
+Notes: USAID - United States Agency for International Development. FEWS - Famine Early Warning System ARD - Associates in Rural Development EDC - EROS Data Center USGS - United States Geological Survey</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV><BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Time period of content:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Time period information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Range of dates/times:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Beginning date:</B></FONT>
+1996</DT>
+<DT><FONT color="#0000AA"><B>Ending date:</B></FONT>
+unknown</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<BR />
+<DIV>
+<DT><FONT color="#0000AA"><B>Currentness reference:</B></FONT></DT>
+<PRE ID="original">The 1979 Census Enumeration Area maps, with sub-location boundaries and the Survey of Kenya Topo. Map Series (1:50000), were used as the base maps for creating new 1989 Census Enumeration Maps with sub-location boundaries. A large field mapping effort, headed by the Kenya Bureau of Statistics (Cartographic Section), began in 1987 in preparation for the 1989 Census. Census enumeration agents visited all 3667 sub-locations and met with the village Assistant Chiefs for the purpose of updating/ correcting the 1979 sub-location boundaries.
+
+The DCW database was originally published in 1992. Data currency varies from place to place depending on the currency of the Operational Navigation Charts (ONC). Chart currency ranged from the mid 1960s to the early 1990s. Compilation dates for every ONC chart are included in the database.
+
+The additional attributes were added in April of 1996 by the EROS Data Center (EDC).</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV><BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Status:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Progress:</B></FONT>
+Complete</DT>
+<DT>
+<FONT color="#0000AA"><B>Maintenance and update frequency:</B></FONT>
+As needed.</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Spatial domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Bounding coordinates:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>West bounding coordinate:</B></FONT>
+33.908859</DT>
+<DT><FONT color="#0000AA"><B>East bounding coordinate:</B></FONT>
+41.899078</DT>
+<DT><FONT color="#0000AA"><B>North bounding coordinate:</B></FONT>
+4.629333</DT>
+<DT><FONT color="#0000AA"><B>South bounding coordinate:</B></FONT>
+-4.678047</DT>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Keywords:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Theme:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Theme keywords:</B></FONT>
+boundaries</DT>
+<DT>
+<FONT color="#0000AA"><B>Theme keyword thesaurus:</B></FONT>
+ISO 19115 Topic Categories</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Theme:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Theme keywords:</B></FONT>
+Secondary administrative boundaries, Borders</DT>
+<DT>
+<FONT color="#0000AA"><B>Theme keyword thesaurus:</B></FONT>
+None</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Place:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Place keywords:</B></FONT>
+Africa, Kenya</DT>
+<DT><FONT color="#0000AA"><B>Place keyword thesaurus:</B></FONT>
+Library of Congress Subject Headings</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Stratum:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Stratum keyword thesaurus:</B></FONT>
+None</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Temporal:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Temporal keywords:</B></FONT>
+1996</DT>
+<DT><FONT color="#0000AA"><B>Temporal keyword thesaurus:</B></FONT>
+None</DT>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Access constraints:</B></FONT>
+May only be used by current Columbia University affiliates.
+
+Acknowledgment of the EDC-International Program and the U.S. Geological Survey would be appreciated in products derived from these data.
+
+Although these data have been processed successfully on a computer system at the EROS Data Center, no warranty expressed or implied is made by FEWS/ARD or USGS/EDC regarding the utility of the data on any other system, nor shall the act of distribution constitute any such warranty.
+
+The Geological Survey will warrant the delivery of this product in computer-readable format, and will offer appropriate adjustment of credit when the product is determined unreadable by correctly adjusted computer input peripherals, or when the physical medium is delivered in damaged condition. Requests for adjustment of credit must be made within 90 days from the date of this shipment from the ordering site.</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Use constraints:</B></FONT></DT>
+<PRE ID="original">Educational non-commercial use only.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Point of contact:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Contact information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Contact person primary:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Contact person:</B></FONT>
+Ron Smith</DT>
+<DT>
+<FONT color="#0000AA"><B>Contact organization:</B></FONT>
+EROS Data Center - USGS</DT>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Contact position:</B></FONT>
+International Program Data Base Manager</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Contact address:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Address type:</B></FONT>
+mailing and physical address</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Address:</B></FONT></DT>
+<PRE ID="original">EROS Data Center U.S. Geological Survey 47914 252nd Street</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT>
+<FONT color="#0000AA"><B>City:</B></FONT>
+Sioux Falls</DT>
+<DT>
+<FONT color="#0000AA"><B>State or province:</B></FONT>
+South Dakota</DT>
+<DT>
+<FONT color="#0000AA"><B>Postal code:</B></FONT>
+57198-0001</DT>
+<DT><FONT color="#0000AA"><B>Country:</B></FONT>
+USA</DT>
+</DL>
+</DD>
+<BR />
+<DT>
+<FONT color="#0000AA"><B>Contact voice telephone:</B></FONT>
+(605) 594-6522</DT>
+<DT><FONT color="#0000AA"><B>Contact TDD/TTY telephone:</B></FONT>
+(605) 594-6522</DT>
+<DT><FONT color="#0000AA"><B>Contact facsimile telephone:</B></FONT>
+(605) 594-6529</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Contact electronic mail address:</B></FONT>
+rsmith@edcmail.cr.usgs.gov</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Hours of service:</B></FONT>
+0730 - 1615 CST</DT>
+<BR /><BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Browse graphic:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Browse graphic file name:</B></FONT>
+<A TARGET="viewer" HREF="http://www.columbia.edu/acis/eds/gis/pix/cat/KenyaAdmn20.bmp">
+http://www.columbia.edu/acis/eds/gis/pix/cat/KenyaAdmn20.bmp</A>
+</DT>
+<DT><FONT color="#0000AA"><B>Browse graphic file description:</B></FONT></DT>
+<DD>Thumbnail Image</DD>
+<DT><FONT color="#0000AA"><B>Browse graphic file type:</B></FONT>
+BMP</DT>
+</DL>
+</DD>
+<BR />
+<DIV>
+<DT><FONT color="#0000AA"><B>Data set credit:</B></FONT></DT>
+<PRE ID="original">The USAID/FEWS Project and EDC International Program deserve credit for this data set.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Security information:</B></FONT></DT>
+<DD>
+<DL>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Native data set environment:</B></FONT></DT>
+<DD>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 2; ESRI ArcCatalog 9.1.0.780</DD>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Cross reference:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation information:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Originators:</B></FONT>
+Environmental Systems Research Institute (ESRI), Inc.</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Title:</B></FONT></DT>
+<DD>Digital Chart of the World (DCW), PONET Layer</DD>
+<BR /><BR /><DT>
+<FONT color="#0000AA"><B>Publication date:</B></FONT>
+1993</DT>
+<DT><FONT color="#0000AA"><B>Publication time:</B></FONT>
+0000</DT>
+<DT><FONT color="#0000AA"><B>Edition:</B></FONT>
+Unknown</DT>
+<DT><FONT color="#0000AA"><B>Geospatial data presentation form:</B></FONT>
+map</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Series information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Series name:</B></FONT>
+Unknown</DT>
+<DT><FONT color="#0000AA"><B>Issue identification:</B></FONT>
+None</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Publication information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Publication place:</B></FONT>
+Redlands, CA, USA</DT>
+<DT><FONT color="#0000AA"><B>Publisher:</B></FONT>
+ESRI</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Other citation details:</B></FONT></DT>
+<DD>Scale - 1:1000000</DD>
+<BR /><BR />
+<DT><FONT color="#0000AA"><B>Online linkage:</B></FONT>
+<A TARGET="viewer" HREF="http://www.esri.com">
+http://www.esri.com</A>
+</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Larger work citation:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation information:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Originators:</B></FONT>
+ESRI</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Title:</B></FONT></DT>
+<DD>DCW</DD>
+<BR /><BR /><DT>
+<FONT color="#0000AA"><B>Publication date:</B></FONT>
+1993</DT>
+<BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Cross reference:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation information:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Originators:</B></FONT>
+Kenya Bureau of Statistics/Cartographic Section</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Title:</B></FONT></DT>
+<DD>Kenya Population Census District Maps</DD>
+<BR /><BR /><DT>
+<FONT color="#0000AA"><B>Publication date:</B></FONT>
+1989</DT>
+<DT><FONT color="#0000AA"><B>Publication time:</B></FONT>
+0000</DT>
+<DT><FONT color="#0000AA"><B>Edition:</B></FONT>
+Unknown</DT>
+<DT><FONT color="#0000AA"><B>Geospatial data presentation form:</B></FONT>
+map</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Series information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Series name:</B></FONT>
+Unknown</DT>
+<DT><FONT color="#0000AA"><B>Issue identification:</B></FONT>
+None</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Publication information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Publication place:</B></FONT>
+Unknown</DT>
+<DT><FONT color="#0000AA"><B>Publisher:</B></FONT>
+KE Bureau of Stats/Cart Sec</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Other citation details:</B></FONT></DT>
+<DD>Scale - 1:50000</DD>
+<BR /><BR />
+<DT><FONT color="#0000AA"><B>Online linkage:</B></FONT>
+<A TARGET="viewer" HREF="http://www.kenyaweb.holowww.com/kenyagov/kenyagov.html">
+http://www.kenyaweb.holowww.com/kenyagov/kenyagov.html</A>
+</DT>
+<BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Data_Quality_Information"><HR /></A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Data Quality Information:</B></FONT></DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute accuracy:</B></FONT></DT>
+<DD>
+<DL>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute accuracy report:</B></FONT></DT>
+<PRE ID="original">See Entity_Attribute_Information</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Quantitative attribute accuracy assessment:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute accuracy value:</B></FONT>
+See Explanation</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute accuracy explanation:</B></FONT></DT>
+<PRE ID="original">Attribute accuracy defined by FEWS/ARD and EDC</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+<DIV>
+<DT><FONT color="#0000AA"><B>Logical consistency report:</B></FONT></DT>
+<PRE ID="original">Polygon topology present.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DIV>
+<DT><FONT color="#0000AA"><B>Completeness report:</B></FONT></DT>
+<PRE ID="original">All data were found to be topologically correct. No duplicate features are present. All polygons are closed, and all lines intersect where intended. No undershoots or overshoots are present.
+
+To the best knowledge of USAID/FEWS and EDC the data compiled in this data set meets the codes and/or procedures established for completeness and consistency.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Positional accuracy:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Horizontal positional accuracy:</B></FONT></DT>
+<DD>
+<DL>
+<DIV>
+<DT><FONT color="#0000AA"><B>Horizontal positional accuracy report:</B></FONT></DT>
+<PRE ID="original">The absolute horizontal accuracy of the DCW for all features derived from Operational Navigation Charts (ONC) is 2040 meters (6700 feet) World Geodetic System (WGS84).
+
+The absolute horizontal accuracy of the DCW for all features derived from Jet Navigation Charts (JNC) is 4270 meters (14006 feet) at 90% Circular Error.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Quantitative horizontal positional accuracy assessment:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Horizontal positional accuracy value:</B></FONT>
+2040 meters</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Horizontal positional accuracy explanation:</B></FONT></DT>
+<PRE ID="original">Resolution as reported</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Vertical positional accuracy:</B></FONT></DT>
+<DD>
+<DL>
+<DIV>
+<DT><FONT color="#0000AA"><B>Vertical positional accuracy report:</B></FONT></DT>
+<PRE ID="original">The absolute vertical accuracy of the DCW is the same as for the original ONC and JNC lithographs at 90% Linear Error (LE), Mean Sea Level (MSL).</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Lineage:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Source information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Source citation:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation information:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Originators:</B></FONT>
+Kenya Bureau of Statistics/Cartographic Section</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Title:</B></FONT></DT>
+<DD>Kenya Population Census District Maps</DD>
+<BR /><BR /><DT>
+<FONT color="#0000AA"><B>Publication date:</B></FONT>
+1989</DT>
+<BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Source scale denominator:</B></FONT>
+50000</DT>
+<DT><FONT color="#0000AA"><B>Type of source media:</B></FONT>
+Hardcopy map</DT>
+<DT><FONT color="#0000AA"><B>Source citation abbreviation:</B></FONT></DT>
+<DD>KPCDM89</DD>
+<DIV>
+<DT><FONT color="#0000AA"><B>Source contribution:</B></FONT></DT>
+<PRE ID="original">Level 2 administrative boundary</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Source time period of content:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Time period information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Single date/time:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Calendar date:</B></FONT>
+1989</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Source currentness reference:</B></FONT></DT>
+<DD>The 1979 Census Enumeration Area maps, with sub-location boundaries and the Survey of Kenya Topo. Map Series (1:50000), were used as the base maps for creating new 1989 Census Enumeration Maps with sub-location boundaries. A large field mapping effort, headed by the Kenya Bureau of Statistics (Cartographic Section), began in 1987 in preparation for the 1989 Census. Census enumeration agents visited all 3667 sub-locations and met with the village Assistant Chiefs for the purpose of updating/ correcting the 1979 sub-location boundaries.</DD>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Source information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Source citation:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Citation information:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Originators:</B></FONT>
+Environmental Systems Research Institute (ESRI), Inc.</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Title:</B></FONT></DT>
+<DD>Digital Chart of the World (DCW), PONET Layer</DD>
+<BR /><BR /><DT>
+<FONT color="#0000AA"><B>Publication date:</B></FONT>
+1993</DT>
+<BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Source scale denominator:</B></FONT>
+1000000</DT>
+<DT><FONT color="#0000AA"><B>Type of source media:</B></FONT>
+CDROM</DT>
+<DT><FONT color="#0000AA"><B>Source citation abbreviation:</B></FONT></DT>
+<DD>DCW93</DD>
+<DIV>
+<DT><FONT color="#0000AA"><B>Source contribution:</B></FONT></DT>
+<PRE ID="original">International boundary</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Source time period of content:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Time period information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Single date/time:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Calendar date:</B></FONT>
+1993</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Source currentness reference:</B></FONT></DT>
+<DD>The DCW database was originally published in 1992. Data currency varies from place to place depending on the currency of the Operational Navigation Charts (ONC). Chart currency ranged from the mid 1960s to the early 1990s. Compilation dates for every ONC chart are included in the database.</DD>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Cloud cover:</B></FONT>
+0</DT>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Spatial_Data_Organization_Information"><HR /></A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Spatial Data Organization Information:</B></FONT></DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Direct spatial reference method:</B></FONT>
+Vector</DT>
+<BR /><BR />
+<DT><FONT color="#0000AA"><B>Point and vector object information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>SDTS terms description:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>SDTS point and vector object type:</B></FONT>
+G-polygon</DT>
+<DT><FONT color="#0000AA"><B>Point and vector object count:</B></FONT>
+28</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>SDTS terms description:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>SDTS point and vector object type:</B></FONT>
+Point</DT>
+<DT><FONT color="#0000AA"><B>Point and vector object count:</B></FONT>
+28</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>SDTS terms description:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>SDTS point and vector object type:</B></FONT>
+String</DT>
+<DT><FONT color="#0000AA"><B>Point and vector object count:</B></FONT>
+45</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>SDTS terms description:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>SDTS point and vector object type:</B></FONT>
+GT-polygon composed of chains</DT>
+<DT><FONT color="#0000AA"><B>Point and vector object count:</B></FONT>
+29</DT>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Spatial_Reference_Information"><HR /></A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Spatial Reference Information:</B></FONT></DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Horizontal coordinate system definition:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Geographic:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Latitude resolution:</B></FONT>
+0.000000</DT>
+<DT><FONT color="#0000AA"><B>Longitude resolution:</B></FONT>
+0.000000</DT>
+<DT><FONT color="#0000AA"><B>Geographic coordinate units:</B></FONT>
+Decimal degrees</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Geodetic model:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Horizontal datum name:</B></FONT>
+D_Clarke_1880_RGS</DT>
+<DT><FONT color="#0000AA"><B>Ellipsoid name:</B></FONT>
+Clarke_1880_RGS</DT>
+<DT><FONT color="#0000AA"><B>Semi-major axis:</B></FONT>
+6378249.145000</DT>
+<DT><FONT color="#0000AA"><B>Denominator of flattening ratio:</B></FONT>
+293.465000</DT>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Entity_and_Attribute_Information"><HR /></A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Entity and Attribute Information:</B></FONT></DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Detailed description:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Entity type:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Entity type label:</B></FONT>
+KEADMN2.PAT</DT>
+<DT><FONT color="#0000AA"><B>Entity type definition:</B></FONT></DT>
+<DD>Polygon Attribute Table</DD>
+<DT><FONT color="#0000AA"><B>Entity type definition source:</B></FONT></DT>
+<DD>FEWS/ARD Washington, DC, USA</DD>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+AREA</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Area of poly/region in square coverage units</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">Computed</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Positive real numbers</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Area of poly/region in square coverage units</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">ARC/INFO</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+PERIMETER</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Perimeter of poly/region in coverage units</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">Computed</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Positive real numbers</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Perimeter of poly/region in coverage units</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">ARC/INFO</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+KEADMN2#</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Internal feature number</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">Computed</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Sequential unique positive integer</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Internal feature number</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">ARC/INFO</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+KEADMN2-ID</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">User-assigned feature number</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">User-defined</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Integer</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">User-assigned feature number</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">ARC/INFO</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+ID</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Unique administrative unit code</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Character</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Unique administrative unit code</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+CNT-ABB</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Unique country abbreviation</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">EDC</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Codeset Ddomain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Codeset name:</B></FONT>
+http://www.nist.gov/itl/csl/fips/fips104.txt</DT>
+<DT><FONT color="#0000AA"><B>Codeset source:</B></FONT>
+Federal Information Processing Standard (FIPS)</DT>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+ADMN2</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Second level administrative unit names</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Character</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Second level administrative unit names</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+NUM-CODE</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Unique numeric administrative unit identifier</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">EROS Data Center (EDC)</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Character</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Unique numeric administrative unit identifier</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">EDC</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+REGION</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">ARD defined region in Africa that Kenya is associated with</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+African Horn Region</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">ARD defined region in Africa that Kenya is associated with</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+FEWS-ABB</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Unique country abbreviation</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+KE</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Unique country abbreviation</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+FEWSID</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Unique administrative unit identifier</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Character</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Unique administrative unit identifier</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Attribute:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Attribute label:</B></FONT>
+FEWSID2</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition:</B></FONT></DT>
+<PRE ID="original">Unique identifier for the second level administrative units</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Attribute definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR /><DT><FONT color="#0000AA"><B>Attribute domain values:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Enumerated domain value:</B></FONT>
+Character</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition:</B></FONT></DT>
+<PRE ID="original">Unique identifier for the second level administrative units</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Enumerated domain value definition source:</B></FONT></DT>
+<PRE ID="original">FEWS/ARD</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Overview description:</B></FONT></DT>
+<DD>
+<DL>
+<DIV>
+<DT><FONT color="#0000AA"><B>Entity and attribute overview:</B></FONT></DT>
+<PRE ID="original">The item (ID) defines the unique administrative unit code, as defined by FEWS/ARD. The item (CNT-ABB) defines the unique country abbreviation, as defined by EDC. The item (ADMN2) defines the second level administrative unit names, as defined by FEWS/ARD. The item (NUM-CODE) defines the unique numeric administrative unit identifier, as defined by EDC. The item (REGION) defines the African region that Kenya is associated with, as defined by FEWS/ARD. The item (FEWS-ABB) defines the unique country abbreviation, as defined by FEWS/ARD. The item (FEWSID) defines the unique administrative unit identifier, as defined by FEWS/ARD. The item (FEWSID2) defines the unique identifiers for the second level administrative units, as defined by FEWS/ARD.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A NAME="217655200">
+<HR />
+</A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Distribution Information:</B></FONT>
+</DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Distributor:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Contact information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Contact person primary:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Contact person:</B></FONT>
+Ron Smith</DT>
+<DT>
+<FONT color="#0000AA"><B>Contact organization:</B></FONT>
+EROS Data Center - USGS</DT>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Contact position:</B></FONT>
+International Program Data Base Manager</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Contact address:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Address type:</B></FONT>
+mailing and physical address</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Address:</B></FONT></DT>
+<PRE ID="original">EROS Data Center U.S. Geological Survey 47914 252nd Street</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT>
+<FONT color="#0000AA"><B>City:</B></FONT>
+Sioux Falls</DT>
+<DT>
+<FONT color="#0000AA"><B>State or province:</B></FONT>
+South Dakota</DT>
+<DT>
+<FONT color="#0000AA"><B>Postal code:</B></FONT>
+57198-0001</DT>
+<DT><FONT color="#0000AA"><B>Country:</B></FONT>
+USA</DT>
+</DL>
+</DD>
+<BR />
+<DT>
+<FONT color="#0000AA"><B>Contact voice telephone:</B></FONT>
+(605) 594-6522</DT>
+<DT><FONT color="#0000AA"><B>Contact TDD/TTY telephone:</B></FONT>
+(605) 594-6522</DT>
+<DT><FONT color="#0000AA"><B>Contact facsimile telephone:</B></FONT>
+(605) 594-6529</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Contact electronic mail address:</B></FONT>
+rsmith@edcmail.cr.usgs.gov</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Hours of service:</B></FONT>
+0730 - 1615 CST</DT>
+<BR /><BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Resource description:</B></FONT>
+KenyaAdmn2-FEWS1996</DT>
+<BR /><BR />
+<DIV>
+<DT><FONT color="#0000AA"><B>Distribution liability:</B></FONT></DT>
+<PRE ID="original">No warranty expressed or implied is made by FEWS or USGS.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<BR />
+<DT><FONT color="#0000AA"><B>Standard order process:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Digital form:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Digital transfer information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Format name:</B></FONT>
+ARCE ARC/INFO Export format</DT>
+<DT><FONT color="#0000AA"><B>Format version number:</B></FONT>
+7.1.1</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Format specification:</B></FONT></DT>
+<PRE ID="original">ASCII</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><FONT color="#0000AA"><B>Format information content:</B></FONT></DT>
+<PRE ID="original">FEWS Vector Data Set</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><FONT color="#0000AA"><B>File decompression technique:</B></FONT>
+pkzip, pkunzip</DT>
+<DT><FONT color="#0000AA"><B>Transfer size:</B></FONT>
+0.175</DT>
+</DL>
+</DD>
+<BR />
+<DT><FONT color="#0000AA"><B>Digital transfer option:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Online option:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Computer contact information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Network address:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Network resource name:</B></FONT>
+<A TARGET="viewer" HREF="PC - http://edcintl.cr.usgs.gov/adds/c1/r2/ke/doc/admn/keadmn2.exe
+
+UNIX - http://edcintl.cr.usgs.gov/adds/c1/r2/ke/doc/admn/keadmn2.tar.gz">
+PC - http://edcintl.cr.usgs.gov/adds/c1/r2/ke/doc/admn/keadmn2.exe
+
+UNIX - http://edcintl.cr.usgs.gov/adds/c1/r2/ke/doc/admn/keadmn2.tar.gz</A>
+</DT>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Access instructions:</B></FONT></DT>
+<DD>Phone, Written correspondence, e-mail, fax or online</DD>
+<DT><FONT color="#0000AA"><B>Online computer and operating system:</B></FONT></DT>
+<DD>SUN Solaris - UNIX</DD>
+<BR /><BR /></DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Offline option:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Offline media:</B></FONT>
+8mm, 4mm, 3480, 3.5" floppy, CDROM</DT>
+<DT><FONT color="#0000AA"><B>Recording capacity:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Recording density:</B></FONT>
+6250</DT>
+<DT><FONT color="#0000AA"><B>Recording density Units:</B></FONT>
+characters per-inch</DT>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Recording format:</B></FONT>
+ASCII</DT>
+<DT><FONT color="#0000AA"><B>Compatibility information:</B></FONT></DT>
+<DD>UNIX or PC based system with ARC/INFO or compatible software</DD>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Fees:</B></FONT>
+$70 US Dollars</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Ordering instructions:</B></FONT></DT>
+<PRE ID="original">Phone, Written correspondence, e-mail or fax</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><FONT color="#0000AA"><B>Turnaround:</B></FONT>
+One week maximum</DT>
+<BR /><BR /></DL>
+</DD>
+<DIV>
+<DT><FONT color="#0000AA"><B>Custom order process:</B></FONT></DT>
+<PRE ID="original">Phone, Written correspondence, e-mail or fax</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><FONT color="#0000AA"><B>Technical prerequisites:</B></FONT></DT>
+<DD>UNIX or PC based system with ARC/INFO or compatible software</DD>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Available time period:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Time period information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Range of dates/times:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Beginning date:</B></FONT>
+19960710</DT>
+<DT><FONT color="#0000AA"><B>Ending date:</B></FONT>
+19991231</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Metadata_Reference_Information"><HR /></A>
+<DL>
+<DT><FONT color="#0000AA" size="3"><B>Metadata Reference Information:</B></FONT></DT>
+<BR /><BR />
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Metadata date:</B></FONT>
+20070523</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Metadata contact:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Contact information:</B></FONT></DT>
+<DD>
+<DL>
+<DT><FONT color="#0000AA"><B>Contact organization primary:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Contact person:</B></FONT>
+GIS/Metadata Librarian</DT>
+<DT>
+<FONT color="#0000AA"><B>Contact organization:</B></FONT>
+Electronic Data Service (EDS), Columbia University Libraries</DT>
+</DL>
+</DD>
+<BR /><DT><FONT color="#0000AA"><B>Contact address:</B></FONT></DT>
+<DD>
+<DL>
+<DT>
+<FONT color="#0000AA"><B>Address type:</B></FONT>
+mailing and physical address</DT>
+<DIV>
+<DT><FONT color="#0000AA"><B>Address:</B></FONT></DT>
+<PRE ID="original">420 W. 118th St., 215 IAB, MC 3301</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT>
+<FONT color="#0000AA"><B>City:</B></FONT>
+New York</DT>
+<DT>
+<FONT color="#0000AA"><B>State or province:</B></FONT>
+NY</DT>
+<DT>
+<FONT color="#0000AA"><B>Postal code:</B></FONT>
+10027</DT>
+<DT><FONT color="#0000AA"><B>Country:</B></FONT>
+USA</DT>
+</DL>
+</DD>
+<BR />
+<DT>
+<FONT color="#0000AA"><B>Contact voice telephone:</B></FONT>
+(212)854-6012</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Contact electronic mail address:</B></FONT>
+eds@columbia.edu</DT>
+<BR /><BR /></DL>
+</DD>
+</DL>
+</DD>
+<DT><FONT color="#0000AA"><B>Metadata standard name:</B></FONT>
+FGDC Content Standards for Digital Geospatial Metadata</DT>
+<DT><FONT color="#0000AA"><B>Metadata standard version:</B></FONT>
+FGDC-STD-001-1998</DT>
+<DT><FONT color="#0000AA"><B>Metadata time convention:</B></FONT>
+local time</DT>
+<BR /><BR /><DT><FONT color="#0000AA"><B>Metadata security information:</B></FONT></DT>
+<DD>
+<DL>
+</DL>
+</DD>
+<BR />
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+</FONT>
+</BODY>
+</HTML>
+ 
