@@ -18,3 +18,5 @@ python-box
 scooby
 whiteboxgui>=0.6.0
 xyzservices
+streamlit==1.0.0
+streamlit-analytics
