@@ -1,6 +1,7 @@
 cache/
 docs/
 cipe-plotly/
+temp/
 *.ipynb
 secrets.toml
 cipe-plotly.py
