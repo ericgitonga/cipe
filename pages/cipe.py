@@ -5,7 +5,7 @@ import json
 import leafmap.kepler as leafmap
 import streamlit as st
 
-st.markdown("#### Micro, Small & Medium Enterprises Digital Economy Survey Report")
+st.subheader("MSMEs Online")
 
 kenya = gpd.read_file("data/provinces/KenyaAdmn2.shp")
 
