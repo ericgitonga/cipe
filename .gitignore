@@ -6,4 +6,3 @@ temp/
 *.ipynb
 *.json
 secrets.toml
-cipe-plotly.py
