@@ -22,7 +22,6 @@ kenya["Percentage of MSMEs Online"] = round((100 * kenya["MSMEs Online"] / kenya
 hide_st_style = """
                 <style>
                 #MainMenu {visibility: hidden;}
-                .viewerBadge_container__1QSob {visibility: hidden;}
                 footer {visibility: hidden;}
                 header {visibility: hidden;}
                 </style>
