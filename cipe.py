@@ -19,6 +19,15 @@ kenya["Number of MSMEs"] = [156, 264, 152, 148, 121, 145, 149, 145]
 kenya["MSMEs Online"] = [55, 183, 10, 74, 62, 51, 81, 134]
 kenya["Percentage of MSMEs Online"] = round((100 * kenya["MSMEs Online"] / kenya["Number of MSMEs"]), 2)
 
+hide_st_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                header {visibility: hidden;}
+                </style>
+                """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 province = st.sidebar.selectbox("Select a province", kenya["Province"], index=0)
 
 m = leafmap.Map(center=[-0.02, 37.91], zoom=5, height=600, widescreen=False)
