@@ -3,6 +3,7 @@ docs/
 cipe-plotly/
 temp/
 .ipynb_checkpoints/
+__pycache__/
 *.ipynb
 *.json
 secrets.toml
