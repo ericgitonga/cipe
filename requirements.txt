@@ -3,4 +3,4 @@ numpy
 geopandas
 leafmap
 keplergl
-streamlit-analytics
+streamlit-option-menu
