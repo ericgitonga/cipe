@@ -5,7 +5,7 @@ import json
 import leafmap.kepler as leafmap
 import streamlit as st
 
-st.subheader("MSMEs Online")
+st.subheader("Number of MSMEs Online")
 
 kenya = gpd.read_file("data/provinces/KenyaAdmn2.shp")
 
@@ -17,6 +17,7 @@ kenya["Province"] = ["Rift Valley", "Eastern", "North Eastern", "Western",
                      "Nyanza", "Central", "Coast", "Nairobi"]
 kenya["Number of MSMEs"] = [156, 264, 152, 148, 121, 145, 149, 145]
 kenya["MSMEs Online"] = [55, 183, 10, 74, 62, 51, 81, 134]
+kenya["MSMEs Not Online"] = kenya["Number of MSMEs"] - kenya["MSMEs Online"]
 kenya["Percentage of MSMEs Online"] = round((100 * kenya["MSMEs Online"] / kenya["Number of MSMEs"]), 2)
 
 hide_st_style = """
