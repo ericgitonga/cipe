@@ -20,15 +20,9 @@ def app():
     kenya["MSMEs Online"] = [55, 183, 10, 74, 62, 51, 81, 134]
     kenya["MSMEs Not Online"] = kenya["Number of MSMEs"] - kenya["MSMEs Online"]
     kenya["Percentage of MSMEs Online"] = round((100 * kenya["MSMEs Online"] / kenya["Number of MSMEs"]), 2)
-
-    hide_st_style = """
-                    <style>
-                    #MainMenu {visibility: hidden;}
-                    footer {visibility: hidden;}
-                    header {visibility: hidden;}
-                    </style>
-                    """
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+    
+    if st.checkbox("Show data"):
+        st.table(kenya.loc[:, kenya.columns != "geometry"])
 
     province = st.sidebar.selectbox("Select a province", kenya["Province"], index=0)
 
@@ -46,4 +40,13 @@ def app():
     else:
         m.add_gdf(kenya, layer_name="Provinces")
     m.to_streamlit(height=500)
+
+    hide_st_style = """
+                    <style>
+                    #MainMenu {visibility: hidden;}
+                    footer {visibility: hidden;}
+                    header {visibility: hidden;}
+                    </style>
+                    """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
 
