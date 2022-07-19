@@ -1,12 +1,14 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, msmes_online
+from apps import home, msmes_online, support, challenges
 
 st.set_page_config(page_title="MSME Digital Economy Survey Report", layout="wide")
 
 apps = [
          {"func": home.app, "title": "Home", "icon": "house"},
          {"func": msmes_online.app, "title": "Number of MSMEs Online", "icon": "geo-alt-fill"},
+         {"func": support.app, "title": "Support Needed by MSMEs", "icon": "tools"},
+         {"func": challenges.app, "title": "Challenges Faced by MSMEs", "icon": "exclamation-circle-fill"},
 ]
 
 titles = [app["title"] for app in apps]
@@ -34,3 +36,10 @@ for app in apps:
         app["func"]()
         break
 
+hide_st_style = """
+                    <style>
+                    #MainMenu {visibility: hidden;}
+                    footer {visibility: hidden;}
+                    header {visibility: hidden;}
+                    </style>
+                    """
