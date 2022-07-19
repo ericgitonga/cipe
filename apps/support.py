@@ -15,7 +15,9 @@ def app():
                  labels = {"support": "Type of Support", "percentage": "Percentage Listing That Support"})
     fig.update_layout(yaxis={"categoryorder":"total ascending"})
     st.plotly_chart(fig, use_container_width=True)
-    
+
+    st.markdown("**NOTE: Label with asterisk not accurate due to being cut off in the PDF report**")
+        
     hide_st_style = """
                     <style>
                     #MainMenu {visibility: hidden;}
