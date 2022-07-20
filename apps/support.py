@@ -14,6 +14,7 @@ def app():
                  title="Support for MSMEs to Go Online",
                  labels = {"support": "Type of Support", "percentage": "Percentage Listing That Support"})
     fig.update_layout(yaxis={"categoryorder":"total ascending"})
+    fig.update_xaxes(showticklabels=False, showgrid=False)
     st.plotly_chart(fig, use_container_width=True)
 
     st.markdown("**NOTE: Label with asterisk not accurate due to being cut off in the PDF report**")

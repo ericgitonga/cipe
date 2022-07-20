@@ -14,6 +14,7 @@ def app():
                  title="Challenges Faced by MSMEs",
                  labels = {"challenge": "Type of Challenge Faced", "percentage": "Percentage Listing That Challenge"})
     fig.update_layout(yaxis={"categoryorder":"total ascending"})
+    fig.update_xaxes(showticklabels=False, showgrid=False)
     st.plotly_chart(fig, use_container_width=True)
     
     st.markdown("**NOTE: Bars with lables M1, M2 and M3 indicate missing labels in data**")
