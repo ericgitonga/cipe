@@ -3,16 +3,16 @@ import plotly.express as px
 import streamlit as st
 
 def app():
-    st.subheader("Digital Technology Adopted by MSMEs")
+    st.subheader("Digital Technology MSMEs Might Adopt in Future")
 
-    digitech_df = pd.read_csv("data/digitech_adoption.csv")
+    digitech_df = pd.read_excel("data/msme.xlsx", sheet_name="digitech_adoption")
 
     if st.checkbox("Show data"):
         st.table(digitech_df)
     
     fig = px.bar(digitech_df, x="percentage", y="digital_technology", text_auto=True,
-                 title="Digital Technology Adopted by MSMEs",
-                 labels = {"digital_technology": "Type of Digital Technology", "percentage": "Percentage Using That Digital Technology"})
+                 title="Digital Technology MSMEs Might Adopt in Future",
+                 labels = {"digital_technology": "Type of Digital Technology", "percentage": "Percentage That Might Adopt the Digital Technology"})
     fig.update_layout(yaxis={"categoryorder":"total ascending"})
     fig.update_xaxes(showticklabels=False, showgrid=False)
     st.plotly_chart(fig, use_container_width=True)

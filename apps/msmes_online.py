@@ -8,18 +8,16 @@ import streamlit as st
 def app():
     st.subheader("Number of MSMEs Online")
 
-    kenya = gpd.read_file("data/provinces/KenyaAdmn2.shp")
-
-    kenya = kenya[["ADMIN2", "geometry"]]
-    kenya.rename(columns={"ADMIN2": "Province"}, inplace=True)
-    kenya = kenya[:8]
-
-    kenya["Province"] = ["Rift Valley", "Eastern", "North Eastern", "Western",
-                         "Nyanza", "Central", "Coast", "Nairobi"]
-    kenya["Number of MSMEs"] = [156, 264, 152, 148, 121, 145, 149, 145]
-    kenya["MSMEs Online"] = [55, 183, 10, 74, 62, 51, 81, 134]
-    kenya["MSMEs Not Online"] = kenya["Number of MSMEs"] - kenya["MSMEs Online"]
-    kenya["Percentage of MSMEs Online"] = round((100 * kenya["MSMEs Online"] / kenya["Number of MSMEs"]), 2)
+    kenya_gs = gpd.read_file("data/provinces/KenyaAdmn2.shp")
+    kenya_gs = kenya_gs[["geometry"]]
+    kenya_gs = kenya_gs[:8]
+    
+    kenya_df = pd.read_excel("data/msme.xlsx", sheet_name="msmes_online")
+    kenya_df["MSMEs Not Online"] = kenya_df["Number of MSMEs"] - kenya_df["MSMEs Online"]
+    kenya_df["Percentage of MSMEs Online"] = round((100 * kenya_df["MSMEs Online"] / kenya_df["Number of MSMEs"]), 2)
+    
+    kenya = pd.concat([kenya_df, kenya_gs], axis="columns")
+    kenya = gpd.GeoDataFrame(kenya)
     
     if st.checkbox("Show data"):
         st.table(kenya.loc[:, kenya.columns != "geometry"])

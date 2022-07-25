@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, msmes_online, support, challenges, digitech_adoption
+from apps import home, msmes_online, support, challenges, sector, digitech_adoption
 
 st.set_page_config(page_title="MSME Digital Economy Survey Report", layout="wide")
 
@@ -9,7 +9,8 @@ apps = [
          {"func": msmes_online.app, "title": "Number of MSMEs Online", "icon": "geo-alt-fill"},
          {"func": support.app, "title": "Support Needed by MSMEs", "icon": "tools"},
          {"func": challenges.app, "title": "Challenges Faced by MSMEs", "icon": "exclamation-circle-fill"},
-         {"func": digitech_adoption.app, "title": "Digital Technology Adopted by MSMEs", "icon": "pc-display-horizontal"},
+         {"func": sector.app, "title": "MSMEs Online by Sector", "icon": "list-columns"},
+         {"func": digitech_adoption.app, "title": "Digital Technology MSMEs Might Adopt in Future", "icon": "pc-display-horizontal"},
 ]
 
 titles = [app["title"] for app in apps]

@@ -5,7 +5,7 @@ import streamlit as st
 def app():
     st.subheader("Challenges Faced by MSMEs")
 
-    challenges_df = pd.read_csv("data/challenges.csv")
+    challenges_df = pd.read_excel("data/msme.xlsx", sheet_name="challenges")
 
     if st.checkbox("Show data"):
         st.table(challenges_df)
